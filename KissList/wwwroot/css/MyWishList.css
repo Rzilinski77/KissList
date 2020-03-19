@@ -110,9 +110,10 @@ body {
 }
 
 .item {
-    padding: 20px 30px;
+    padding: 20px 2em;
     height: 10em;
     display: flex;
+    padding-left:0;
 }
 
     .item:nth-child(3) {
@@ -149,6 +150,9 @@ body {
 
 .delete {
     padding-bottom: 3em;
+    position:absolute;
+    margin-left:75em;
+    padding-top:1.5em;
 
 }
 
@@ -191,7 +195,7 @@ input:focus {
 
 .total-price {
     margin-left:1em;
-    margin-right:1em;
+    margin-right:2.5em;
     padding-top: 35px;
     text-align: center;
     font-size: 16px;
@@ -209,4 +213,10 @@ input:focus {
 .detailimage {
     height: 5em;
     width: 9.5em;
+}
+
+#theinput{
+    position:absolute;
+    margin-right:1em;
+    margin-top:1.5em;
 }
