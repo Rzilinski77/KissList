@@ -91,7 +91,8 @@ namespace KissList.Controllers
                
                 if (wishlist.UserName == username)
                 {
-                    list.Add(wishlist);                    
+                    list.Add(wishlist);
+                    ViewBag.Name = username;
                 }    
                                 
             }

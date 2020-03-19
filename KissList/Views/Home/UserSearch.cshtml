@@ -6,8 +6,8 @@
 <link href="~/css/WishList.css" rel="stylesheet" />
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-<h1><i class="fas fa-kiss-wink-heart"></i></h1>
-<p>You are now viewing  wishlist!</p>
+<h1 class="text-center"><i class="fas fa-kiss-wink-heart"></i></h1>
+<p class="text-center">You are now viewing @ViewBag.Name's wishlist!</p>
 <div class="flex">
     @foreach (WishList listing in Model)
     {
