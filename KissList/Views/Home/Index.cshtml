@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="~/css/Index.css" rel="stylesheet" />
+
+    <div class="text-right">
+        <form asp-controller="Home" asp-action="SearchUser">
+            <div>
+                <label for="usearch"></label>
+                <input type="text" placeholder="Search users" name="username">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+    <br />
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+
+            <h1 class="text-center display-4"><i class="fas fa-kiss-wink-heart"></i>KISS List<i class="fas fa-kiss-wink-heart"></i></h1>
+            <h3 class="text-center lead">Simple Gifts and WishLists in a Flash <i class="fas fa-bolt"></i></h3>
+            <p class="text-center lead">Messing around with jumbotron see if we wanna put something here</p>
+        </div>
+    </div>
+}
+
+
+<form asp-controller="Home" asp-action="GiftSearch">
+    <div class="container text-center">
+
+        <select class="ui dropdown btn btn-secondary dropdown-toggle" dropdown-toggle" id="Recipient" name="recipient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <option value="">Recipient</option>
+            <option value="Men">Men</option>
+            <option value="Women">Women</option>
+            <option value="Unisex">Unisex</option>
+            <option value="Boys">Boys</option>
+            <option value="Girls">Girls</option>
+            <option value="Pets">Pets</option>
+        </select>
+        <select class="ui dropdown btn btn-secondary dropdown-toggle" id="Occasion" name="occasion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <option value="">Occassion</option>
+            <option value="Anniversary">Anniversary</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Christmas">Christmas</option>
+            <option value="Engagement">Engagement</option>
+            <option value="Halloween">Halloween</option>
+            <option value="Wedding">Wedding</option>
+        </select>        
+
+        <select class="ui dropdown btn btn-secondary dropdown-toggle" id="Minimum Price" name="minPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <option value="">Minimum Price</option>
+            <option value="1">$1</option>
+            <option value="5">$5</option>
+            <option value="10">$10</option>
+            <option value="20">$20</option>
+        </select>
+        <select class="ui dropdown btn btn-secondary dropdown-toggle" id="Maximum Price" name="maxPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <option value="">Maximum Price</option>
+            <option value="10">$10</option>
+            <option value="20">$20</option>
+            <option value="30">$30</option>
+            <option value="40">$40</option>
+            <option value="50">$50</option>
+            <option value="100">$100</option>
+        </select>
+        <label for="Add A Keyword"></label>
+
+        <input type="text" placeholder="Search by Keyword" name="keyword" id="KeyWord">
+
+    </div>
+    <br />
+    <br />
+    <div class="container text-center">
+        <input type="submit" class=" btn-primary rounded-pill" value="Find My Gift" />
+        <input type="button" class="btn-success rounded-pill" data-toggle="tooltip" data-placement="top" title="Randy-izer"
+               value="Feeling Lucky" onclick="location.href='@Url.Action("LuckySearch", "Home")'" />
+    </div>
+</form>
+<br />
+<br />
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+

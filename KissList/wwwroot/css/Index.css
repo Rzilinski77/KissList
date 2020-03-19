@@ -1,0 +1,71 @@
+﻿body {
+
+}
+
+#fa-search {
+    background: rgba(0, 0, 0, 0.15);
+    color:forestgreen;
+    padding-left: 50px;
+}
+
+.fa-bolt {
+    background-color: red;
+    animation-name: bolt;
+    animation-duration: 1s;
+}
+
+@keyframes bolt {
+    from {
+        background-color: red;
+    }
+
+    to {
+        background-color: yellow;
+    }
+}
+
+.jumbotron-fluid {
+    background-color: teal;
+    color: white;
+}
+
+    to {
+        background-color: yellow;
+    }
+}
+.jumbotron-fluid {
+    background-color: teal;
+     color: white;
+}
+#drop {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#drop-down {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #666;
+    width: 160px;
+    margin-left: -45px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+    #dropdown-menu a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    } 

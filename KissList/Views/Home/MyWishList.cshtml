@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "MyWishList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/UserWishList.css" rel="stylesheet" />
+
+
+@model KissListDBContext
+
+
+@{
+    List<WishList> wishlist = new List<WishList>();
+}
+
+<h1>My WishList</h1>w
+
+@foreach (WishList userItem in Model.WishList)
+{
+    if (User.Identity.Name == userItem.UserName)
+    {
+        wishlist.Add(userItem);
+    }
+}
+
+@foreach (WishList item in wishlist)
+{
+<div class="item">
+
+    <div class="image">
+        <img class="card-img detailimage" src="@item.ImageUrl" width="100" height="200">
+        <a class="title" href="@item.Url">@item.Item</a>
+    </div>
+
+    <div class="total-price">
+        <p>$@item.Price</p>
+    </div>
+    <div class="description align-row flex-borders">
+        <input type="button" value="Delete" style="text-align:center"
+               class="align-middle green-border wishlist" onclick="location.href='@Url.Action("RemoveItem", "Home", new { user = User.Identity.Name, item = item.Item })'" />
+    </div>
+</div>
+    
+    }
+

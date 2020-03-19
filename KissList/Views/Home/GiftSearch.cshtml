@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "GiftSearch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/GiftSearchStyleSheet.css" rel="stylesheet" />
+
+@model List<Listing>
+<h2>Gift Search</h2>
+
+<div class="flex-container">
+    @foreach (Listing listing in Model)
+    {
+    <div class="column">
+        <div class="box">
+            <img src="@listing.imageUrl" height="200" width="200">
+            <p>Price: $@listing.price</p>
+        </div>
+        <div><a href="@listing.url">@listing.title</a></div>        
+        <p>@listing.description</p>
+        <div>
+
+        </div>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+    <input type="button"class="btn btn-info wishlist" value="Add To Wishlist" style="text-align:center" 
+           onclick="location.href='@Url.Action("AddWishList", "Home", new { item = listing.title, description = listing.description, imageUrl = listing.imageUrl, url = listing.url, price = listing.price})'" />
+        }
+        else
+        {
+            <div><p>Login to add item to wishlist!</p></div>
+        }
+    </div>
+}
+    </div>
+
