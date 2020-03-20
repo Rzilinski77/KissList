@@ -8,6 +8,17 @@
 
 
 <link href="~/css/LuckySearch.css" rel="stylesheet" />
+<style>
+    body {
+        background-image: url('images/kissback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+</style>
+
+
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <div class="flex-container">
@@ -15,39 +26,40 @@
     <img class="clover" src="https://www.pinclipart.com/picdir/middle/0-4378_irish-clip-art-free-shamrocks-shamrock-clover-leaf.png" width="50" height="40" alt="Image result for clover leaf" />
 </div>
 
+
 <div class="flex">
     <div class="main-container">
         <img src="@Model.imageUrl" width="500" height="450">
         <a class="title" href="@Model.url">@Model.title</a>
-        
+
         <p class="description show-read-more">@Model.description</p>
         <p>$@Model.price</p>
     </div>
 </div>
-        <div class="align-row flex-borders">
-            <input type="button" value="Add To Wishlist" style="text-align:center" class="align-middle green-border wishlist" onclick="location.href='@Url.Action("AddWishList", "Home", new { item = Model.title, description = Model.description, imageUrl = Model.imageUrl, url = Model.url, price = Model.price})'" />
-            <input type="button" value="Take Another Chance" style="text-align:center" class="align-middle green-border try-luck" onclick="location.href='@Url.Action("LuckySearch", "Home")'" />
-    </div>
+<div class="align-row flex-borders">
+    <input type="button" value="Add To Wishlist" style="text-align:center" class="align-middle green-border wishlist" onclick="location.href='@Url.Action("AddWishList", "Home", new { item = Model.title, description = Model.description, imageUrl = Model.imageUrl, url = Model.url, price = Model.price})'" />
+    <input type="button" value="Take Another Chance" style="text-align:center" class="align-middle green-border try-luck" onclick="location.href='@Url.Action("LuckySearch", "Home")'" />
+</div>
 
 
-        <script>
-            $(document).ready(function () {
-                var maxLength = 300;
-                $(".show-read-more").each(function () {
-                    var myStr = $(this).text();
-                    if ($.trim(myStr).length > maxLength) {
-                        var newStr = myStr.substring(0, maxLength);
-                        var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-                        $(this).empty().html(newStr);
-                        $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
-                        $(this).append('<span class="more-text">' + removedStr + '</span>');
-                    }
-                });
-                $(".read-more").click(function () {
-                    $(this).siblings(".more-text").contents().unwrap();
-                    $(this).remove();
-                });
-            });
-        </script>
+<script>
+    $(document).ready(function () {
+        var maxLength = 300;
+        $(".show-read-more").each(function () {
+            var myStr = $(this).text();
+            if ($.trim(myStr).length > maxLength) {
+                var newStr = myStr.substring(0, maxLength);
+                var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                $(this).empty().html(newStr);
+                $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+                $(this).append('<span class="more-text">' + removedStr + '</span>');
+            }
+        });
+        $(".read-more").click(function () {
+            $(this).siblings(".more-text").contents().unwrap();
+            $(this).remove();
+        });
+    });
+</script>
 
 
