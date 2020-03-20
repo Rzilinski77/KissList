@@ -116,12 +116,9 @@ body {
     padding-bottom: 60px;
 }
 .footer {
-<<<<<<< HEAD
-  position: fixed;
   background-color:white;
-=======
+
   position: relative;
->>>>>>> c047c7cc8b70bce3dc52fbc54ef66923c52c7868
   bottom: 0;
   width: 100%;
   height:60px;
