@@ -15,41 +15,20 @@ namespace KissList.Controllers
     [ApiController]
     public class KissListController : ControllerBase
     {
-        private JsonDocument jDoc;
-        private IConfiguration _config;
         KissListDBContext db = new KissListDBContext();
-        public IActionResult RemoveItem(string user, string item)
+        public void RemoveItem(string user, string item)
         {
-            foreach (WishList list in db.WishList)
+            WishList confirmedListing = new WishList();
+            foreach (WishList listing in db.WishList)
             {
-                if (user == User.Identity.Name && item == list.Item)
+                if (user == listing.UserName && item == listing.Item)
                 {
-                    db.WishList.Remove(list);
-                    db.SaveChanges();
-                   
+                    confirmedListing = listing;
                 }
-
             }
-            return RedirectToAction("MyWishList", db);
 
+            db.WishList.Remove(confirmedListing);
+            db.SaveChanges();
         }
-
     }
 }
-
-
-//private void RemoveItem(string user, string item)
-//{
-//    foreach (WishList list in db.WishList)
-//    {
-//        if (user == User.Identity.Name && item == list.Item)
-//        {
-//            db.WishList.Remove(list);
-//            db.SaveChanges();
-
-
-//        }
-
-//    }
-
-//}

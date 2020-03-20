@@ -14,6 +14,7 @@ namespace KissList.Controllers
     public class HomeController : Controller
     {
         SearchController searchcontroller;
+        KissListController klcontroller = new KissListController();
         private readonly ILogger<HomeController> _logger;
         private IConfiguration _config;
         private KissListDBContext db;
@@ -107,5 +108,14 @@ namespace KissList.Controllers
         {
             return View();
         }
+
+        public IActionResult RemoveItem(string user, string item)
+        {
+            db = new KissListDBContext();
+            klcontroller.RemoveItem(user, item);
+
+            return View("MyWishList", db);
+        }
+
     }
 }
