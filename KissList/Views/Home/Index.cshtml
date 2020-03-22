@@ -30,10 +30,8 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            
             <h1 class="text-center display-4"><img src="~/Images/KISSLIST (1).png" /></h1>
-            <h3 class="text-center lead">Simple Gifts and WishLists in a Flash <i class="fas fa-bolt"></i></h3>
-            <p class="text-center lead">Messing around with jumbotron see if we wanna put something here</p>
+            <h3 class="text-center lead">Gifts and Wishlists. Keeping it Super Simple.</h3>
         </div>
     </div>
 }
@@ -42,7 +40,7 @@
 <form asp-controller="Home" asp-action="GiftSearch">
     <div class="container text-center">
 
-        <select class="ui dropdown btn btn-secondary dropdown-toggle" dropdown-toggle" id="Recipient" name="recipient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <select class="ui dropdown btn btn-light dropdown-toggle" dropdown-toggle" id="Recipient" name="recipient" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <option value="">Recipient</option>
             <option value="Men">Men</option>
             <option value="Women">Women</option>
@@ -51,7 +49,7 @@
             <option value="Girls">Girls</option>
             <option value="Pets">Pets</option>
         </select>
-        <select class="ui dropdown btn btn-secondary dropdown-toggle" id="Occasion" name="occasion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <select class="ui dropdown btn btn-light dropdown-toggle" id="Occasion" name="occasion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <option value="">Occassion</option>
             <option value="Anniversary">Anniversary</option>
             <option value="Birthday">Birthday</option>
@@ -61,14 +59,14 @@
             <option value="Wedding">Wedding</option>
         </select>
 
-        <select class="ui dropdown btn btn-secondary dropdown-toggle" id="Minimum Price" name="minPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <select class="ui dropdown btn btn-light dropdown-toggle" id="Minimum Price" name="minPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <option value="">Minimum Price</option>
             <option value="1">$1</option>
             <option value="5">$5</option>
             <option value="10">$10</option>
             <option value="20">$20</option>
         </select>
-        <select class="ui dropdown btn btn-secondary dropdown-toggle" id="Maximum Price" name="maxPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <select class="ui dropdown btn btn-light dropdown-toggle" id="Maximum Price" name="maxPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <option value="">Maximum Price</option>
             <option value="10">$10</option>
             <option value="20">$20</option>
@@ -85,8 +83,8 @@
     <br />
     <br />
     <div class="container text-center">
-        <input type="submit" class=" btn-primary rounded-pill" value="Find My Gift" />
-        <input type="button" class="btn-success rounded-pill" data-toggle="tooltip" data-placement="top" title="Randy-izer"
+        <input type="submit" class="btn btn-light" value="Find My Gift" />
+        <input type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Randy-izer"
                value="Feeling Lucky" onclick="location.href='@Url.Action("LuckySearch", "Home")'" />
     </div>
 </form>

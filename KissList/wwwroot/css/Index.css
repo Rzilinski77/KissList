@@ -25,8 +25,8 @@
 }
 
 .jumbotron-fluid {
-    background-color: teal;
-    color: white;
+    background-color: transparent;
+    color: black;
 }
 
     to {
@@ -34,7 +34,7 @@
     }
 }
 .jumbotron-fluid {
-    background-color: teal;
+    background-color: transparent;
      color: white;
 }
 #drop {
