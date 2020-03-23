@@ -62,7 +62,7 @@ namespace KissList.Controllers
             db.SaveChanges();
 
             
-                return View("MyWishList", db);
+             return View("MyWishList", db);
             //return View("index");
 
         }
