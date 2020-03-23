@@ -39,6 +39,12 @@ namespace KissList.Controllers
             return View(listing);
         }
 
+        public IActionResult MyWishList()
+        {
+            db = new KissListDBContext();
+            return View(db);
+        }
+
         public async Task<IActionResult> GiftSearch(string occasion, string recipient, string minPrice, string maxPrice, string keyword)
         {
             List<Listing> giftList = await searchcontroller.Search(occasion, recipient, minPrice, maxPrice, keyword);
