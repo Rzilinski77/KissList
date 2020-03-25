@@ -114,6 +114,10 @@ body {
     margin-bottom: 60px;
     background-image: url('../images/kissback.jpg');
     padding-bottom: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 .footer {
   position: fixed;

@@ -1,7 +1,15 @@
 ﻿body {
-
+    background-image: url('../images/kissback.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
+h3 {
+    position: center;
+    padding-bottom: 10px;
+}
 #fa-search {
     background: rgba(0, 0, 0, 0.15);
     color:forestgreen;

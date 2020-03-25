@@ -1,5 +1,11 @@
 ﻿body {
+    background-image: url('../images/kissgreen.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
+
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -34,6 +40,8 @@
     padding: 2em;
     text-align: center;
 }
+
+
 @media only screen and (min-width: 700px) {
     body {
     }
@@ -71,4 +79,6 @@
         flex-flow: column;
         width: 40em;
     }
+
 }
+

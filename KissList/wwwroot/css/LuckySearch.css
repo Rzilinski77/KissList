@@ -1,13 +1,17 @@
 ﻿body {
-    background-image: url('images/kissback.jpg');
+    background-image: url('../images/kissback.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
 }
 
+#left {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
 p {
-    background-image: url('images/kissback.jpg');
     text-align: center;
     font-size: 1.5em;
 }
@@ -34,8 +38,9 @@ p {
 
 
 .wishlist, .try-luck {
-    justify-content:space-between;
+    justify-content: space-between;
 }
+
 .flex-borders {
     display: flex;
     flex-direction: row;
@@ -54,6 +59,7 @@ p {
 }
 
 .main-container {
+    background-color: white;
     margin-right: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 2em;
@@ -65,10 +71,11 @@ p {
 @media only screen and (min-width: 700px) {
 
     body {
-    background-image: url('images/background.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
+        background-image: url('../images/kissyellow.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
     }
 
     .wishlist, .try-luck {
@@ -127,20 +134,22 @@ p {
         flex-direction: row;
     }
 
-    .description { 
-       color: rgb(169,169,169);
-       padding-top: 1em;
+    .description {
+        color: rgb(169,169,169);
+        padding-top: 1em;
     }
+
     .title {
-        padding-top:1em;
+        padding-top: 1em;
         font-size: 20px;
         color: black;
-        font-weight:bold;
+        font-weight: bold;
     }
 
     .show-read-more .more-text {
         display: none;
     }
+
     .green-border {
         border: 5px solid rgb(32,178,170);
         background-color: rgb(32,178,170);
@@ -166,5 +175,4 @@ p {
         .green-border::after active {
             background-image: url('../images/kissgreen.jpg');
         }
-    }
-
+}
