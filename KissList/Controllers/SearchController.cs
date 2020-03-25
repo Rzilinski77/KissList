@@ -80,6 +80,7 @@ namespace KissList.Controllers
 
             string apiKey = _config["ApiKey"];
             int num = random.Next(10);
+            int arrayLength;
             using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync($"https://openapi.etsy.com/v2/listings/active?api_key={apiKey}&limit=100&offset={num}{parameters}"))
@@ -88,7 +89,9 @@ namespace KissList.Controllers
 
                     jDoc = JsonDocument.Parse(stringResponse);
 
-                    for (int i = 0; i < 5; i++)
+                    arrayLength = jDoc.RootElement.GetProperty("results").GetArrayLength();
+                   
+                    for (int i = 0; i < arrayLength && i < 5 ; i++)
                     {
                         Listing searchListing = new Listing();
                         searchListing.title = jDoc.RootElement.GetProperty("results")[i].GetProperty("title").ToString();
@@ -102,7 +105,7 @@ namespace KissList.Controllers
                     }
                 }
 
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < arrayLength && i < 5; i++)
                 {
                     using (var response = await httpClient.GetAsync($"https://openapi.etsy.com/v2/listings/{pictureIdList[i]}/images?api_key={apiKey}"))
                     {
