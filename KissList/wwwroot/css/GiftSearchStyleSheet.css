@@ -10,6 +10,9 @@
     box-sizing: border-box;
 }
 
+.show-read-more .more-text {
+    display: none;
+}
 /*flexible container */
 .flex-container{
     display:flex;
