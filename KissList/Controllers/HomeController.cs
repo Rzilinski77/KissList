@@ -48,7 +48,8 @@ namespace KissList.Controllers
         public async Task<IActionResult> GiftSearch(string occasion, string recipient, string minPrice, string maxPrice, string keyword)
         {
             List<Listing> giftList = await searchcontroller.Search(occasion, recipient, minPrice, maxPrice, keyword);
-            return View(giftList);
+
+                return View(giftList);
         }
 
         [Authorize]
@@ -56,6 +57,7 @@ namespace KissList.Controllers
         {
             db = new KissListDBContext();
 
+            
             WishList wishList = new WishList();
             wishList.UserName = User.Identity.Name;
             wishList.Item = item;
