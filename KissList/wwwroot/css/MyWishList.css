@@ -107,7 +107,6 @@ body {
 
 .title {
     height: 60px;
-    border-bottom: 1px solid #E1E8EE;
     padding-bottom: 5em;
     color: #5E6977;
     font-size: 18px;
@@ -115,13 +114,14 @@ body {
 }
 
 .item {
-    padding: 20px 2em;
+    padding: 25px 3em;
+    padding-right:1em;
     height: 10em;
     display: flex;
-    padding-left: 0;
+    background:white;
 }
 
-    .item:nth-child(3) {
+    .item {
         border-top: 1px solid #E1E8EE;
         border-bottom: 1px solid #E1E8EE;
     }
@@ -155,17 +155,20 @@ body {
 
 .delete {
     padding-bottom: 3em;
-    position:absolute;
-    margin-left:75em;
+    padding-left:10em;
     padding-top:1.5em;
 
 }
 
-    .delete span {
-        display: block;
-        font-size: 14px;
-        font-weight: 400;
-    }
+.wishlist-title{
+    display:flex;
+}
+
+.delete span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+}
 
         .delete span:first-child {
             margin-bottom: 5px;
