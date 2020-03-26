@@ -6,6 +6,10 @@
     background-attachment: fixed;
 }
 
+.main-title {
+    font-family: Candara;
+}
+
 #left {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);

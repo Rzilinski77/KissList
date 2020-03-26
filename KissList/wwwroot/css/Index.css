@@ -6,6 +6,10 @@
     background-attachment: fixed;
 }
 
+.lead{
+    font-weight: 500;
+    color: black;
+}
 h3 {
     position: center;
     padding-bottom: 10px;

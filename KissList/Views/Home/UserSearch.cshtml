@@ -6,18 +6,20 @@
 <link href="~/css/WishList.css" rel="stylesheet" />
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-<h1 id="title" class="text-center">You are now viewing @ViewBag.Name's wishlist!</h1>
+<h1 id="title" class="main-title">You are now viewing @ViewBag.Name's wishlist!</h1>
 <div class="flex">
     @foreach (WishList listing in Model)
     {
 
+    <div class="flex">
         <div class="main-container">
-            <img src="@listing.ImageUrl" height="200" width="200">
-            <p>Price: $@listing.Price</p>
+            <img src="@listing.ImageUrl" width="500" height="450">
+            <a class="title" href="@listing.Url">@listing.Item</a>
 
-            <div><a class="description show-read-more" href="@listing.Url">@listing.Item</a></div>
-            <p>@listing.Description</p>
+            <p class="description show-read-more">@listing.Description</p>
+            <p>$@listing.Price</p>
         </div>
+    </div>
     }
 
 </div>

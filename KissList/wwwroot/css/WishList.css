@@ -6,6 +6,11 @@
     background-attachment: fixed;
 }
 
+.main-title {
+    font-family: Candara;
+    text-align: center;
+    padding-top: 50px;
+}
 #title {
     padding-top: 30px;
 }

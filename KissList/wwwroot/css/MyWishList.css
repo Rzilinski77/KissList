@@ -214,6 +214,7 @@ input:focus {
    
 }
 .main-title {
+    font-family: Candara;
     padding-bottom:1em;
     padding-top:1em;
     text-align:center;
