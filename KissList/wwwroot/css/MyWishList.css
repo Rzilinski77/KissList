@@ -119,6 +119,7 @@ body {
     height: 10em;
     display: flex;
     background:white;
+    opacity:0.9;
 }
 
     .item {
