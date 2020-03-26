@@ -4,37 +4,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link href="~/css/GiftSearchStyleSheet.css" rel="stylesheet" />
+    <link href="~/css/WishList.css" rel="stylesheet" />
+
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 @model List<Listing>
 <h2>Gift Search</h2>
 
-<div class="flex-container">
+<div class="flex">
     @foreach (Listing listing in Model)
     {
-        <div class="column">
-            <div class="box">
-                <img src="@listing.imageUrl" height="200" width="200">
-                <p>Price: $@listing.price</p>
-            </div>
-            <div><a href="@listing.url">@listing.title</a></div>
-            <p class="show-read-more">@listing.description</p>
-            <div>
-
-            </div>
-
-            @if (User.Identity.IsAuthenticated)
-            {
-                <input type="button" class="btn btn-info wishlist" value="Add To Wishlist" style="text-align:center"
-                       onclick="location.href='@Url.Action("AddWishList", "Home", new { item = listing.title, description = listing.description, imageUrl = listing.imageUrl, url = listing.url, price = listing.price})'" />
-            }
-            else
-            {
-                <div><p>Login to add item to wishlist!</p></div>
-            }
+    <div class="main-container">
+        <div class="image">
+            <img src="@listing.imageUrl" height="200" width="200">
         </div>
+        <div class="total-price">
+            <p>Price: $@listing.price</p>
+        </div>
+
+        <div class="wishlist-title"><a href="@listing.url">@listing.title</a></div>
+        <p class="show-read-more">@listing.description</p>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <input type="button" class="btn btn-info wishlist" value="Add To Wishlist" style="text-align:center"
+                   onclick="location.href='@Url.Action("AddWishList", "Home", new { item = listing.title, description = listing.description, imageUrl = listing.imageUrl, url = listing.url, price = listing.price})'" />
+        }
+        else
+        {
+            <div><p>Login to add item to wishlist!</p></div>
+        }
+    </div>
     }
 </div>
 
